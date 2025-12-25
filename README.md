@@ -5,15 +5,16 @@ Smart Mess Queue Management System
 Long queues in college mess cause time wastage and overcrowding.
 
 ## Solution
-Mess-Ease is a no-code application built using AppSheet that:
+Mess-Ease is a Google AppSheet–based application designed to reduce overcrowding and long queues in college mess facilities by using AI-driven demand prediction. It 
 - Collects mess attendance
 - Predicts crowd levels
 - Displays queue status in real time
 
 ## Tech Stack
-- Google Sheets
-- AppSheet
-- AI-based prediction
+- Google AppSheet 
+- Google Sheets (Database)
+- Google Apps Script (Automation & AI Integration)
+- Gemini AI (Prediction Logic)
 
 ## How It Works
 1. Mess staff enters daily meal count
