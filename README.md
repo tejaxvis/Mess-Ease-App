@@ -1,4 +1,4 @@
-# Mess-Ease 🍽️
+## Mess-Ease 🍽️
 Smart Mess Queue Management System
 
 ## Problem Statement
@@ -10,17 +10,17 @@ Mess-Ease is a no-code application built using AppSheet that:
 - Predicts crowd levels
 - Displays queue status in real time
 
+## Tech Stack
+- Google Sheets
+- AppSheet
+- AI-based prediction
+
 ## How It Works
 1. Mess staff enters daily meal count
 2. Data is stored in Google Sheets
 3. AI logic predicts crowd load
 4. Queue status is updated automatically
 5. Students view live queue status
-
-## Tech Stack
-- Google Sheets
-- AppSheet
-- AI-based prediction
 
 ## Features
 - Admin mess entry
@@ -30,6 +30,18 @@ Mess-Ease is a no-code application built using AppSheet that:
 
 ## App Link
 https://www.appsheet.com/start/f9f05955-cf61-423a-bc53-1816cf403c27
+
+## Sample Data Used
+| Date       | Predicted_Breakfast | Predicted_Lunch | Predicted_Dinner | Predicted_Total |
+| ---------- | ------------------- | --------------- | ---------------- | --------------- |
+| 20/12/2025 | 45                  | 70              | 55               | 170             |
+| 21/12/2025 | 50                  | 80              | 60               | 190             |
+| 22/12/2025 | 35                  | 60              | 45               | 140             |
+| 23/12/2025 | 60                  | 90              | 70               | 220             |
+| 24/12/2025 | 10                  | 20              | 30               | 60              |
+
+## Future Scope
+The system can be extended with AI-based prediction, QR check-ins, and real time notifications.
 
 ## Team
 D3CODE
