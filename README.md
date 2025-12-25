@@ -10,6 +10,13 @@ Mess-Ease is a no-code application built using AppSheet that:
 - Predicts crowd levels
 - Displays queue status in real time
 
+## How It Works
+1. Mess staff enters daily meal count
+2. Data is stored in Google Sheets
+3. AI logic predicts crowd load
+4. Queue status is updated automatically
+5. Students view live queue status
+
 ## Tech Stack
 - Google Sheets
 - AppSheet
