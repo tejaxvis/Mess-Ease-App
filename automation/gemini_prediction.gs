@@ -1,21 +1,21 @@
 /**
- * Mess-Ease: AI-Based Demand Prediction
- * ------------------------------------
- * This script reads historical mess attendance data from Google Sheets,
- * sends a structured prompt to Gemini AI,
- * and writes the predicted student count back to the Prediction_Output sheet.
- *
- * Tech Used:
- * - Google Apps Script (Automation)
- * - Google Sheets (Data Layer)
- * - Gemini API (AI Prediction)
+  Mess-Ease: AI-Based Demand Prediction
+  ------------------------------------
+  This script reads historical mess attendance data from Google Sheets,
+  sends a structured prompt to Gemini AI,
+  and writes the predicted student count back to the Prediction_Output sheet.
+ 
+  Tech Used:
+  - Google Apps Script (Automation)
+  - Google Sheets (Data Layer)
+  - Gemini API (AI Prediction)
  */
 
 const GEMINI_MODEL = "models/gemini-1.5-flash";
 
 function runMessDemandPrediction() {
 
-  // 1️⃣ Access Daily Mess Data
+  // Access Daily Mess Data
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const dataSheet = ss.getSheetByName("Daily_Mess_Data");
   const outputSheet = ss.getSheetByName("Prediction_Output");
@@ -31,7 +31,7 @@ function runMessDemandPrediction() {
     .getValues()
     .flat();
 
-  // 2️⃣ Construct AI Prompt
+  // Construct AI Prompt
   const prompt = `
 You are an AI system helping a college mess optimize food preparation.
 
@@ -46,7 +46,7 @@ Tasks:
 Do not explain. Do not add text.
 `;
 
-  // 3️⃣ Call Gemini API
+  // Call Gemini API
   const url = `https://generativelanguage.googleapis.com/v1beta/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
 
   const payload = {
@@ -64,7 +64,7 @@ Do not explain. Do not add text.
 
   const json = JSON.parse(response.getContentText());
 
-  // 4️⃣ Parse AI Output
+  // Parse AI Output
   const predictionText =
     json.candidates[0].content.parts[0].text.trim();
 
@@ -74,7 +74,7 @@ Do not explain. Do not add text.
     throw new Error("AI returned invalid prediction.");
   }
 
-  // 5️⃣ Write Prediction to Sheet
+  // Write Prediction to Sheet
   outputSheet.getRange("B2").setValue(predictedCount);
   outputSheet.getRange("B3").setValue(new Date());
 
